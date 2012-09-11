@@ -1,0 +1,100 @@
+<?php
+$connection=mysql_connect("localhost","root","");
+if(!$connection)
+{
+die("Connection Error");
+}
+
+
+session_start();
+
+
+$db=mysql_select_db("incportal",$connection);
+if(!$db)
+die("Error in db delection..");
+?>
+
+<html>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<?php
+
+
+if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
+{
+
+$home_username = $_SESSION['Username'];
+$query="SELECT * FROM pro_details WHERE pro_id = '$home_username'";
+$result=mysql_query($query,$connection);
+
+   if(!$result)
+    die("Connection Error");
+   else
+   {
+     $row = mysql_fetch_array($result);
+     $home_pro_name=$row['pro_name'];
+     $home_pro_colg=$row['pro_college'];
+     $home_contact=$row['pro_contact'];
+     $home_pro_noj=$row['judging_done'];
+    }
+
+$query="SELECT * FROM floating_db WHERE fproid = '$home_username'";
+$result=mysql_query($query,$connection);
+
+   if(!$result)
+    die("Query`Failed!");
+   else
+   {
+    
+     $cnt=mysql_num_rows($result);
+     ?>
+	
+	<table class=floattable>
+	<tr>
+	<th>Judge ID</th>
+	<th>Escort</th>
+	</tr>
+      <?php
+
+       while($row = mysql_fetch_array($result))
+       {
+	echo "<tr>";
+	$f_jdid=$row['fjdid'];
+	$f_escort=$row['fescort'];
+ 	echo "<td> $f_jdid </td>";
+	echo "<td> $f_escort </td>";
+	echo "</tr>";
+       }
+    
+	echo " </table>";
+   }
+?>
+
+<h1>
+INC 2012 Portal
+</h1>
+
+<div id="one">
+<p id = "pone">PROJECT DETAILS<p>
+Name: <?php echo "    $home_pro_name"; ?><br>
+College: <?php echo "    $home_pro_colg"; ?><br>
+Contact: <?php echo "    $home_contact"; ?><br>
+No of Judging Done: <?php echo "    $home_pro_noj"; ?><br><br>
+
+</div>
+
+<?php
+}
+else
+{
+echo "going to index";
+header("refresh:0,index.php");
+}
+?>
+
+<div>
+<form action="logout.php" method="post">
+<input type="submit" value="Logout">
+</form>
+</div>
+
+</html>
