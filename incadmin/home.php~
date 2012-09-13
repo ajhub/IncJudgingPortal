@@ -18,7 +18,6 @@ die("Error in db delection..");
 <link rel="stylesheet" type="text/css" href="style.css" />
 <?php
 
-
 if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 {
 
