@@ -33,105 +33,102 @@ if(!empty($_SESSION['mUsername']) && !empty($_SESSION['mLoggedIn']))
           $result=mysql_query($query,$connection);
           if(!($result))
           {
-  	die("canot");
+ 	 	die("canot");
           }
-         if(!(empty($_POST['dkproid2'])))
-         {
-          $dkqproid2=$_POST['dkproid2'];
-          $query="INSERT INTO floating_db (fjdid, fproid, fescort) VALUES ('$dkqjd','$dkqproid2','$dkqescort')";
-          $result=mysql_query($query,$connection);
-          if(!($result))
+          if(!(empty($_POST['dkproid2'])))
           {
-  	die("canotxx");
+          	$dkqproid2=$_POST['dkproid2'];
+         	$query="INSERT INTO floating_db (fjdid, fproid, fescort) VALUES ('$dkqjd','$dkqproid2','$dkqescort')";
+          	$result=mysql_query($query,$connection);
+          	if(!($result))
+          	{
+  			die("canotxx");
+          	}
           }
-         }
-         if(!(empty($_POST['dkproid3'])))
-         {
-          $dkqproid3=$_POST['dkproid3'];
-          $query="INSERT INTO floating_db (fjdid, fproid, fescort) VALUES ('$dkqjd','$dkqproid3','$dkqescort')";
-          $result=mysql_query($query,$connection);
-          if(!($result))
+          if(!(empty($_POST['dkproid3'])))
           {
-  	die("canotxx");
+         	$dkqproid3=$_POST['dkproid3'];
+        	$query="INSERT INTO floating_db (fjdid, fproid, fescort) VALUES ('$dkqjd','$dkqproid3','$dkqescort')";
+          	$result=mysql_query($query,$connection);
+          	if(!($result))
+          	{
+  			die("canot");
+          	}
           }
-         }
-         if(!(empty($_POST['dkproid4'])))
-         {
-          $dkqproid4=$_POST['dkproid4'];
-          $query="INSERT INTO floating_db (fjdid, fproid, fescort) VALUES ('$dkqjd','$dkqproid4','$dkqescort')";
-          $result=mysql_query($query,$connection);
-          if(!($result))
+          if(!(empty($_POST['dkproid4'])))
           {
-  	die("canotxx");
+          	$dkqproid4=$_POST['dkproid4'];
+          	$query="INSERT INTO floating_db (fjdid, fproid, fescort) VALUES ('$dkqjd','$dkqproid4','$dkqescort')";
+          	$result=mysql_query($query,$connection);
+          	if(!($result))
+          	{
+  			die("canot");
+          	}
           }
-         }
-         if(!(empty($_POST['dkproid5'])))
-         {
-          $dkqproid5=$_POST['dkproid5'];
-          $query="INSERT INTO floating_db (fjdid, fproid, fescort) VALUES ('$dkqjd','$dkqproid5','$dkqescort')";
-          $result=mysql_query($query,$connection);
-          if(!($result))
+          if(!(empty($_POST['dkproid5'])))
           {
-  	die("canotxx");
+          	$dkqproid5=$_POST['dkproid5'];
+          	$query="INSERT INTO floating_db (fjdid, fproid, fescort) VALUES ('$dkqjd','$dkqproid5','$dkqescort')";
+          	$result=mysql_query($query,$connection);
+          	if(!($result))
+          	{
+  			die("canot");
+          	}
           }
-         }
        }
         
-        ?>
-        <div id="one">
+?>
+
+<div id="one">
 	<form method="post" action="doorkeeper.php" name="dkform">
-	Judge ID <input  name="dkjd" type="text"><br><br>
-              Escort No<input name="dkescort" type="text"><br><br>
-	Pro ID 1 <input  name="dkproid1" type="text"><br>
-	Pro ID 2 <input  name="dkproid2" type="text"><br>
-	Pro ID 3 <input  name="dkproid3" type="text"><br>
-	Pro ID 4 <input  name="dkproid4" type="text"><br>
-	Pro ID 5 <input  name="dkproid5" type="text"><br><br>
-	<input type="submit" name="dksubmit" value="Update">
+		Judge ID <input  name="dkjd" type="text"><br><br>
+		Escort No<input name="dkescort" type="text"><br><br>
+		Pro ID 1 <input  name="dkproid1" type="text"><br>
+		Pro ID 2 <input  name="dkproid2" type="text"><br>	
+		Pro ID 3 <input  name="dkproid3" type="text"><br>
+		Pro ID 4 <input  name="dkproid4" type="text"><br>
+		Pro ID 5 <input  name="dkproid5" type="text"><br><br>
+		<input type="submit" name="dksubmit" value="Update">
 	</form>
-       </div>
+</div>
        
-         <div id=two>
+<div id=two>
 	<form method="post" action="report.php" name="dkreport">
-	Judge ID<input name="reportjdid" type="text"><br><br>
-	<input type="submit" value="Reported">
+		Judge ID<input name="reportjdid" type="text"><br><br>
+		<input type="submit" value="Reported">
 	</form>
-         </div>               
+</div>               
 
 	
 
-	<div id=toppanel>
-  
-    <div  id="topbutton">
-    	
-	<div id=topbutton1>
-    	<a href="home.php" >HOME </a>    
-              </div>
-
-     	<div id=topbutton2>
+<div id=toppanel>
+	<div  id="topbutton">
+    		<div id=topbutton1>
+    			<a href="home.php" >HOME </a>    
+                </div>
+	<div id=topbutton2>
    	<a href="notices.php" >NOTICES</a>  
-    	</div>
+</div>
  
-     	<div id="topbutton3">
+<div id="topbutton3">
      	<a href="rules.php" >MANUAL</a>  
-     	</div>
+</div>
 
-   	<div id=topbutton5>  
-              <a href="logout.php" >LOGOUT</a>   
-   	</div>
+<div id=topbutton5>  
+        <a href="logout.php" >LOGOUT</a>   
+</div>
 	
 
-    </div>
+</div>
 </div>
 
 
-
-         <?php       
+<?php       
 }
 else
 {
-echo "going to index";
-header("refresh:0,index.php");
+	echo "going to index";
+	header("refresh:0,index.php");
 }
 ?>
 
